@@ -1,3 +1,4 @@
+import "./Navbar.css";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
