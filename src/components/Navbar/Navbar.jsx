@@ -1,6 +1,6 @@
-import "./Navbar.css";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import "./Navbar.css";
 
 const navLinks = [
   { name: "Home", href: "#home" },
