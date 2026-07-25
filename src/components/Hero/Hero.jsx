@@ -5,6 +5,8 @@ import "./Hero.css";
 function Hero() {
   return (
     <section className="hero" id="home">
+      <div className="cyber-grid"></div>
+      <div className="noise"></div>
 
       <div className="hero-container">
 
