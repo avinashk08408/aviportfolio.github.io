@@ -1,36 +1,30 @@
-import { useEffect, useState } from "react";
-import "./Cursor.css";
+.custom-cursor{
 
-function Cursor() {
-  const [position, setPosition] = useState({
-    x: 0,
-    y: 0,
-  });
+position:fixed;
 
-  useEffect(() => {
-    const moveCursor = (e) => {
-      setPosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
+width:20px;
 
-    window.addEventListener("mousemove", moveCursor);
+height:20px;
 
-    return () => {
-      window.removeEventListener("mousemove", moveCursor);
-    };
-  }, []);
+border-radius:50%;
 
-  return (
-    <div
-      className="custom-cursor"
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-      }}
-    />
-  );
+background:#38bdf8;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+box-shadow:
+0 0 10px #38bdf8,
+0 0 25px #38bdf8,
+0 0 50px #38bdf8;
+
+z-index:9999;
+
+transition:
+left .05s linear,
+top .05s linear;
+
+mix-blend-mode:screen;
+
 }
-
-export default Cursor;
