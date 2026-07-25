@@ -1,24 +1,23 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { FaGithub, FaLinkedin, FaArrowRight } from "react-icons/fa";
-
 import "./Hero.css";
 
 function Hero() {
   return (
-    <section id="home" className="hero">
+    <section className="hero" id="home">
       <div className="hero-content">
+
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="hero-subtitle"
+          transition={{ duration: 0.7 }}
+          className="hero-intro"
         >
           Hello, I'm
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
@@ -33,39 +32,36 @@ function Hero() {
             2000,
             "React Developer",
             2000,
-            "Security Enthusiast",
+            "Ethical Hacking Learner",
             2000,
           ]}
           wrapper="span"
-          speed={50}
           repeat={Infinity}
+          speed={50}
           className="typing"
         />
 
-        <p className="hero-description">
-          Building secure applications, modern web experiences, and constantly
-          exploring cybersecurity.
-        </p>
+        <motion.p
+          className="hero-description"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
+          I build secure, modern and interactive web applications while
+          continuously exploring cybersecurity, ethical hacking and secure
+          software development.
+        </motion.p>
 
         <div className="hero-buttons">
-          <a href="#projects" className="primary-btn">
-            View Projects <FaArrowRight />
+          <a href="#projects" className="btn-primary">
+            View Projects
           </a>
 
-          <a href="#contact" className="secondary-btn">
+          <a href="#contact" className="btn-secondary">
             Contact Me
           </a>
         </div>
 
-        <div className="social-icons">
-          <a href="#">
-            <FaGithub />
-          </a>
-
-          <a href="#">
-            <FaLinkedin />
-          </a>
-        </div>
       </div>
     </section>
   );
