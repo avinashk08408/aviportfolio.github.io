@@ -5,64 +5,86 @@ import "./Hero.css";
 function Hero() {
   return (
     <section className="hero" id="home">
-      <div className="hero-content">
 
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="hero-intro"
-        >
-          Hello, I'm
-        </motion.p>
+      <div className="hero-container">
 
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          Avinash K
-        </motion.h1>
+        {/* LEFT */}
 
-        <TypeAnimation
-          sequence={[
-            "Cyber Security Student",
-            2000,
-            "Frontend Developer",
-            2000,
-            "React Developer",
-            2000,
-            "Ethical Hacking Learner",
-            2000,
-          ]}
-          wrapper="span"
-          repeat={Infinity}
-          speed={50}
-          className="typing"
-        />
+        <div className="hero-content">
 
-        <motion.p
-          className="hero-description"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          I build secure, modern and interactive web applications while
-          continuously exploring cybersecurity, ethical hacking and secure
-          software development.
-        </motion.p>
+          <motion.p
+            className="hero-intro"
+            initial={{ opacity:0,y:30 }}
+            animate={{ opacity:1,y:0 }}
+          >
+            HELLO I'M
+          </motion.p>
 
-        <div className="hero-buttons">
-          <a href="#projects" className="btn-primary">
-            View Projects
-          </a>
+          <motion.h1
+            initial={{ opacity:0,y:40 }}
+            animate={{ opacity:1,y:0 }}
+          >
+            Avinash K
+          </motion.h1>
 
-          <a href="#contact" className="btn-secondary">
-            Contact Me
-          </a>
+          <TypeAnimation
+            sequence={[
+              "Cyber Security Student",
+              2000,
+              "Frontend Developer",
+              2000,
+              "React Developer",
+              2000,
+              "Ethical Hacker",
+              2000,
+            ]}
+            speed={50}
+            repeat={Infinity}
+            className="typing"
+          />
+
+          <p className="hero-description">
+            Passionate about cybersecurity, secure web development,
+            ethical hacking and building modern web applications
+            with beautiful user experiences.
+          </p>
+
+          <div className="hero-buttons">
+
+            <a href="#projects" className="btn-primary">
+              View Projects
+            </a>
+
+            <a href="#contact" className="btn-secondary">
+              Contact Me
+            </a>
+
+          </div>
+
         </div>
 
+        {/* RIGHT */}
+
+        <motion.div
+          className="hero-image"
+          initial={{ opacity:0,scale:.8 }}
+          animate={{ opacity:1,scale:1 }}
+          transition={{ duration:1 }}
+        >
+
+          <div className="image-ring">
+
+            <img
+              src="/profile.png"
+              alt="Avinash"
+            />
+
+          </div>
+
+        </motion.div>
+
       </div>
+
     </section>
   );
 }
