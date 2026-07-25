@@ -1,0 +1,180 @@
+/* ==========================================
+   SKILLS SECTION
+========================================== */
+
+.skills {
+    position: relative;
+    padding: 120px 8%;
+    background: #050816;
+    overflow: hidden;
+}
+
+/* Background Glow */
+
+.skills::before {
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: #38bdf8;
+    filter: blur(180px);
+    opacity: .08;
+    left: -180px;
+    top: 100px;
+}
+
+.skills-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.skills-title p {
+    color: #38bdf8;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.skills-title h2 {
+    font-size: 3rem;
+    color: white;
+}
+
+.skills-grid {
+    max-width: 1300px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 35px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.skill-box {
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    transition: .4s;
+}
+
+.skill-box:hover{
+
+    transform: translateY(-8px);
+
+    border-color:#38bdf8;
+
+    box-shadow:0 0 30px rgba(56,189,248,.18);
+
+}
+
+.skill-box h3{
+
+    color:#38bdf8;
+
+    margin-bottom:25px;
+
+    font-size:1.5rem;
+
+}
+
+.skill-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.skill-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px;
+
+    background:#0b1220;
+
+    border-radius:14px;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.skill-card:hover{
+
+    transform:scale(1.05);
+
+    background:#111827;
+
+    border-color:#38bdf8;
+
+}
+
+.skill-card .icon{
+
+    font-size:2rem;
+
+    color:#38bdf8;
+
+}
+
+.skill-card p{
+
+    color:#e2e8f0;
+
+    font-weight:600;
+
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+@media(max-width:1000px){
+
+.skills-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.skills{
+
+padding:90px 25px;
+
+}
+
+.skills-title h2{
+
+font-size:2.3rem;
+
+}
+
+.skill-list{
+
+grid-template-columns:1fr;
+
+}
+
+}
