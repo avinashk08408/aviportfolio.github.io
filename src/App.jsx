@@ -28,7 +28,7 @@ function App() {
 
         <Journey />
 
-        Certifications />
+        <Certifications />
         
         <Contact />
 
