@@ -3,14 +3,17 @@ import "./Skills.css";
 const skillGroups = [
   {
     title: "Frontend",
+    icon: "</>",
     skills: ["HTML", "CSS", "JavaScript", "React", "Vite"],
   },
   {
     title: "Programming",
+    icon: "{ }",
     skills: ["Python", "C", "C++"],
   },
   {
     title: "Cyber Security",
+    icon: "🛡",
     skills: [
       "Linux",
       "Networking",
@@ -22,6 +25,7 @@ const skillGroups = [
   },
   {
     title: "Tools",
+    icon: "⚡",
     skills: [
       "Git",
       "GitHub",
@@ -36,28 +40,39 @@ function Skills() {
   return (
     <section className="skills" id="skills">
 
-      <div className="section-heading">
-        <p>TECH STACK</p>
-        <h2>Skills & Technologies</h2>
-      </div>
+      <div className="terminal">
 
-      <div className="skills-dashboard">
+        <div className="terminal-header">
+          <span className="red"></span>
+          <span className="yellow"></span>
+          <span className="green"></span>
 
-        {skillGroups.map((group, index) => (
-          <div className="skill-group" key={index}>
+          <h2>Tech Command Center</h2>
+        </div>
 
-            <h3>{group.title}</h3>
+        <div className="terminal-body">
 
-            <div className="skill-tags">
+          {skillGroups.map((group, index) => (
+            <div className="command-box" key={index}>
 
-              {group.skills.map((skill, i) => (
-                <span key={i}>{skill}</span>
-              ))}
+              <h3>
+                <span>{group.icon}</span> {group.title}
+              </h3>
+
+              <div className="tags">
+
+                {group.skills.map((skill, i) => (
+                  <span className="tag" key={i}>
+                    {skill}
+                  </span>
+                ))}
+
+              </div>
 
             </div>
+          ))}
 
-          </div>
-        ))}
+        </div>
 
       </div>
 
