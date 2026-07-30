@@ -3,80 +3,122 @@ padding:100px 8%;
 background:#050816;
 }
 
-.dashboard-title{
+.section-heading{
 text-align:center;
+margin-bottom:60px;
+}
+
+.section-heading p{
+color:#38bdf8;
+font-size:.95rem;
+letter-spacing:4px;
+font-weight:600;
+text-transform:uppercase;
+}
+
+.section-heading h2{
 color:#fff;
-font-size:2.8rem;
-margin-bottom:50px;
+font-size:3rem;
+margin-top:12px;
 }
 
 .dashboard{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:25px;
+gap:28px;
 }
 
 .panel{
-background:#0f172a;
-border:1px solid #1e293b;
+background:#111827;
+border:1px solid rgba(255,255,255,.08);
 border-radius:18px;
-overflow:hidden;
-transition:.3s;
+padding:24px;
+transition:.35s;
 }
 
 .panel:hover{
 transform:translateY(-8px);
-box-shadow:0 0 30px rgba(56,189,248,.25);
 border-color:#38bdf8;
+box-shadow:0 15px 40px rgba(56,189,248,.18);
 }
 
 .panel-header{
-background:#111827;
-padding:18px;
 display:flex;
 align-items:center;
-gap:12px;
-border-bottom:1px solid #1e293b;
+gap:15px;
+padding-bottom:18px;
+margin-bottom:20px;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.panel-header span{
-font-size:1.5rem;
+.icon{
+width:48px;
+height:48px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#38bdf820;
+color:#38bdf8;
+font-size:1.3rem;
+border-radius:12px;
 }
 
 .panel-header h3{
-color:#38bdf8;
+color:#fff;
+font-size:1.3rem;
+font-weight:600;
 }
 
 .panel-body{
-padding:20px;
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:12px;
+gap:14px;
 }
 
 .item{
-background:#1e293b;
-padding:12px;
+background:#0f172a;
+border:1px solid rgba(255,255,255,.06);
 border-radius:10px;
+padding:12px;
 text-align:center;
-color:#e2e8f0;
+color:#cbd5e1;
+font-size:.95rem;
 transition:.3s;
 }
 
 .item:hover{
 background:#38bdf8;
 color:#050816;
-transform:scale(1.05);
+transform:translateY(-3px);
+font-weight:600;
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
 .dashboard{
 grid-template-columns:1fr;
 }
 
+}
+
+@media(max-width:600px){
+
+.skills{
+padding:80px 20px;
+}
+
+.section-heading h2{
+font-size:2.2rem;
+}
+
 .panel-body{
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.item{
+font-size:.85rem;
+padding:10px;
 }
 
 }
