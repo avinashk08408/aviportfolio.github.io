@@ -5,7 +5,6 @@ import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Journey from "./components/Journey/Journey";
-import Journey from "./components/Certifications/Certifications";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
@@ -27,8 +26,6 @@ function App() {
         <Projects />
 
         <Journey />
-
-        <Certifications />
         
         <Contact />
 
