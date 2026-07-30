@@ -1,54 +1,73 @@
 import "./Journey.css";
-function Experience() {
-  const experiences = [
+import { FaGraduationCap, FaSchool, FaUniversity } from "react-icons/fa";
+
+function Journey() {
+  const education = [
     {
+      icon: <FaUniversity />,
+      title: "B.E Cyber Security",
+      school: "SRM Valliammai Engineering College",
       year: "2025 - Present",
-      title: "Cyber Security Student",
-      company: "SRM Valliammai Engineering College",
-      description:
-        "Learning networking, Linux, ethical hacking, web security, Python, and cybersecurity fundamentals."
+      status: "Currently Pursuing",
+      current: true,
     },
     {
+      icon: <FaGraduationCap />,
+      title: "Higher Secondary (HSC)",
+      school: "Don Bosco Matric Hr. Sec. School",
       year: "2025",
-      title: "Frontend Developer",
-      company: "Personal Projects",
-      description:
-        "Built responsive websites using HTML, CSS, JavaScript, React, and Vite with modern UI/UX."
+      status: "85%",
+      current: false,
     },
     {
-      year: "2026",
-      title: "Cyber Security Projects",
-      company: "Self Learning",
-      description:
-        "Developing projects such as AuthShield, Web Vulnerability Scanner, and other cybersecurity tools."
-    }
+      icon: <FaSchool />,
+      title: "Secondary School (SSLC)",
+      school: "Don Bosco Matric Hr. Sec. School",
+      year: "2023",
+      status: "90%",
+      current: false,
+    },
   ];
 
   return (
-    <section className="experience" id="experience">
-      <div className="experience-container">
-        <h2 className="section-title">
-          Experience <span>& Journey</span>
-        </h2>
+    <section className="journey" id="journey">
 
-        <div className="timeline">
-          {experiences.map((item, index) => (
-            <div className="timeline-item" key={index}>
-              <div className="timeline-dot"></div>
-
-              <div className="timeline-content">
-                <span className="timeline-year">{item.year}</span>
-
-                <h3>{item.title}</h3>
-
-                <h4>{item.company}</h4>
-
-                <p>{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="section-heading">
+        <p>ACADEMIC PASSPORT</p>
+        <h2>My Educational Journey</h2>
       </div>
+
+      <div className="passport">
+
+        {education.map((item, index) => (
+          <div
+            className={`passport-card ${item.current ? "active" : ""}`}
+            key={index}
+          >
+            <div className="passport-icon">
+              {item.icon}
+            </div>
+
+            <div className="passport-content">
+
+              <h3>{item.title}</h3>
+
+              <p>{item.school}</p>
+
+              <span>{item.year}</span>
+
+              <div className="status">
+                {item.current ? "🟢 " : "✔ "}
+                {item.status}
+              </div>
+
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
     </section>
   );
 }
