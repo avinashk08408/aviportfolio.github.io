@@ -1,108 +1,93 @@
-import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import "./Projects.css";
 
 const projects = [
   {
     title: "AuthShield",
-    description:
-      "A secure Role-Based Authentication System with login, registration, admin dashboard, password hashing and user management.",
-    tech: ["React", "Python", "Flask", "SQLite"],
     image: "/projects/authshield.png",
-    github: "#",
-    demo: "#",
+    tech: "React • Flask • SQLite",
+    description: "Secure authentication system with RBAC.",
   },
   {
     title: "Web Vulnerability Scanner",
-    description:
-      "A web application that scans websites for common vulnerabilities such as SQL Injection, XSS and insecure headers.",
-    tech: ["Python", "Flask", "Security"],
     image: "/projects/scanner.png",
-    github: "#",
-    demo: "#",
+    tech: "Python • Flask",
+    description: "Detects common web vulnerabilities.",
   },
   {
-    title: "Fake GitHub Repository Detector",
-    description:
-      "Browser extension that analyses GitHub repositories and warns users about suspicious or potentially fake repositories.",
-    tech: ["JavaScript", "Chrome Extension", "AI"],
+    title: "Fake GitHub Repo Detector",
     image: "/projects/github-detector.png",
-    github: "#",
-    demo: "#",
+    tech: "React • AI",
+    description: "Detects fake GitHub repositories.",
   },
   {
     title: "Coming Soon",
-    description:
-      "More cybersecurity and web development projects will be added here.",
-    tech: ["Future Project"],
     image: "/projects/coming-soon.png",
-    github: "#",
-    demo: "#",
+    tech: "More Projects",
+    description: "More exciting cybersecurity projects.",
   },
 ];
 
 function Projects() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % projects.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const next = () =>
+    setCurrent((current + 1) % projects.length);
+
+  const prev = () =>
+    setCurrent((current - 1 + projects.length) % projects.length);
+
+  let startX = 0;
+
   return (
     <section className="projects" id="projects">
+      <h2 className="section-title">
+        My <span>Projects</span>
+      </h2>
 
-      <motion.div
-        className="projects-title"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+      <div
+        className="carousel"
+        onTouchStart={(e) => (startX = e.touches[0].clientX)}
+        onTouchEnd={(e) => {
+          const endX = e.changedTouches[0].clientX;
+
+          if (startX - endX > 50) next();
+          if (endX - startX > 50) prev();
+        }}
       >
-        <p>MY WORK</p>
-        <h2>Featured Projects</h2>
-      </motion.div>
+        <div className="project-card">
+          <img
+            src={projects[current].image}
+            alt={projects[current].title}
+          />
 
-      <div className="projects-grid">
+          <div className="project-content">
+            <h3>{projects[current].title}</h3>
 
-        {projects.map((project, index) => (
-          <motion.div
-            className="project-card"
-            key={index}
-            whileHover={{ y: -10 }}
-          >
+            <p>{projects[current].description}</p>
 
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image"
-            />
-
-            <div className="project-content">
-
-              <h3>{project.title}</h3>
-
-              <p>{project.description}</p>
-
-              <div className="tech-stack">
-                {project.tech.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-
-              <div className="project-buttons">
-
-                <a href={project.github}>
-                  <FaGithub />
-                  GitHub
-                </a>
-
-                <a href={project.demo}>
-                  <FaExternalLinkAlt />
-                  Live Demo
-                </a>
-
-              </div>
-
-            </div>
-
-          </motion.div>
-        ))}
-
+            <span>{projects[current].tech}</span>
+          </div>
+        </div>
       </div>
 
+      <div className="dots">
+        {projects.map((_, index) => (
+          <span
+            key={index}
+            className={current === index ? "active-dot" : ""}
+            onClick={() => setCurrent(index)}
+          ></span>
+        ))}
+      </div>
     </section>
   );
 }
