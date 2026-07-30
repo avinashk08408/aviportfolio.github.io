@@ -1,20 +1,20 @@
 import "./Skills.css";
 
-const skillGroups = [
+const dashboard = [
   {
     title: "Frontend",
-    icon: "</>",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Vite"],
+    icon: "🖥",
+    items: ["HTML", "CSS", "JavaScript", "React", "Vite"],
   },
   {
     title: "Programming",
-    icon: "{ }",
-    skills: ["Python", "C", "C++"],
+    icon: "🐍",
+    items: ["Python", "C", "C++"],
   },
   {
     title: "Cyber Security",
     icon: "🛡",
-    skills: [
+    items: [
       "Linux",
       "Networking",
       "OWASP",
@@ -25,8 +25,8 @@ const skillGroups = [
   },
   {
     title: "Tools",
-    icon: "⚡",
-    skills: [
+    icon: "🛠",
+    items: [
       "Git",
       "GitHub",
       "VS Code",
@@ -40,39 +40,32 @@ function Skills() {
   return (
     <section className="skills" id="skills">
 
-      <div className="terminal">
+      <h2 className="dashboard-title">
+        System Dashboard
+      </h2>
 
-        <div className="terminal-header">
-          <span className="red"></span>
-          <span className="yellow"></span>
-          <span className="green"></span>
+      <div className="dashboard">
 
-          <h2>Tech Command Center</h2>
-        </div>
+        {dashboard.map((card, index) => (
+          <div className="panel" key={index}>
 
-        <div className="terminal-body">
+            <div className="panel-header">
+              <span>{card.icon}</span>
+              <h3>{card.title}</h3>
+            </div>
 
-          {skillGroups.map((group, index) => (
-            <div className="command-box" key={index}>
+            <div className="panel-body">
 
-              <h3>
-                <span>{group.icon}</span> {group.title}
-              </h3>
-
-              <div className="tags">
-
-                {group.skills.map((skill, i) => (
-                  <span className="tag" key={i}>
-                    {skill}
-                  </span>
-                ))}
-
-              </div>
+              {card.items.map((item, i) => (
+                <div className="item" key={i}>
+                  {item}
+                </div>
+              ))}
 
             </div>
-          ))}
 
-        </div>
+          </div>
+        ))}
 
       </div>
 
