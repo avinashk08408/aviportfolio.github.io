@@ -1,19 +1,25 @@
 import "./Skills.css";
+import {
+  FaCode,
+  FaLaptopCode,
+  FaShieldAlt,
+  FaTools,
+} from "react-icons/fa";
 
 const dashboard = [
   {
     title: "Frontend",
-    icon: "🖥",
+    icon: <FaCode />,
     items: ["HTML", "CSS", "JavaScript", "React", "Vite"],
   },
   {
     title: "Programming",
-    icon: "🐍",
+    icon: <FaLaptopCode />,
     items: ["Python", "C", "C++"],
   },
   {
     title: "Cyber Security",
-    icon: "🛡",
+    icon: <FaShieldAlt />,
     items: [
       "Linux",
       "Networking",
@@ -25,7 +31,7 @@ const dashboard = [
   },
   {
     title: "Tools",
-    icon: "🛠",
+    icon: <FaTools />,
     items: [
       "Git",
       "GitHub",
@@ -40,9 +46,10 @@ function Skills() {
   return (
     <section className="skills" id="skills">
 
-      <h2 className="dashboard-title">
-        System Dashboard
-      </h2>
+      <div className="section-heading">
+        <p>TECHNICAL EXPERTISE</p>
+        <h2>Skills & Technologies</h2>
+      </div>
 
       <div className="dashboard">
 
@@ -50,7 +57,8 @@ function Skills() {
           <div className="panel" key={index}>
 
             <div className="panel-header">
-              <span>{card.icon}</span>
+              <div className="icon">{card.icon}</div>
+
               <h3>{card.title}</h3>
             </div>
 
