@@ -1,55 +1,33 @@
-import { motion } from "framer-motion";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaPython,
-  FaGitAlt,
-  FaLinux
-} from "react-icons/fa";
-
-import {
-  SiCplusplus,
-  SiMysql
-} from "react-icons/si";
-
 import "./Skills.css";
 
-const skills = [
+const skillGroups = [
   {
     title: "Frontend",
-    items: [
-      { icon: <FaHtml5 />, name: "HTML5" },
-      { icon: <FaCss3Alt />, name: "CSS3" },
-      { icon: <FaJs />, name: "JavaScript" },
-      { icon: <FaReact />, name: "React" },
-    ],
+    skills: ["HTML", "CSS", "JavaScript", "React", "Vite"],
   },
   {
-    title: "Backend",
-    items: [
-      { icon: <FaPython />, name: "Python" },
-      { icon: <SiCplusplus />, name: "C++" },
-      { icon: <SiMysql />, name: "SQL" },
-    ],
+    title: "Programming",
+    skills: ["Python", "C", "C++"],
   },
   {
     title: "Cyber Security",
-    items: [
-      { icon: "🛡️", name: "Networking" },
-      { icon: "🔐", name: "OWASP" },
-      { icon: "⚔️", name: "CTF" },
-      { icon: "🌐", name: "Web Security" },
+    skills: [
+      "Linux",
+      "Networking",
+      "OWASP",
+      "Nmap",
+      "Burp Suite",
+      "Wireshark",
     ],
   },
   {
     title: "Tools",
-    items: [
-      { icon: <FaGitAlt />, name: "Git" },
-      { icon: <FaLinux />, name: "Linux" },
-      { icon: "💻", name: "VS Code" },
-      { icon: "🐙", name: "GitHub" },
+    skills: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "Figma",
     ],
   },
 ];
@@ -58,39 +36,27 @@ function Skills() {
   return (
     <section className="skills" id="skills">
 
-      <motion.div
-        className="skills-title"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
+      <div className="section-heading">
         <p>TECH STACK</p>
-        <h2>Skills</h2>
-      </motion.div>
+        <h2>Skills & Technologies</h2>
+      </div>
 
-      <div className="skills-grid">
+      <div className="skills-dashboard">
 
-        {skills.map((group) => (
-          <motion.div
-            className="skill-box"
-            key={group.title}
-            whileHover={{ y: -8 }}
-          >
+        {skillGroups.map((group, index) => (
+          <div className="skill-group" key={index}>
 
             <h3>{group.title}</h3>
 
-            <div className="skill-list">
+            <div className="skill-tags">
 
-              {group.items.map((skill) => (
-                <div className="skill-card" key={skill.name}>
-                  <span className="icon">{skill.icon}</span>
-                  <p>{skill.name}</p>
-                </div>
+              {group.skills.map((skill, i) => (
+                <span key={i}>{skill}</span>
               ))}
 
             </div>
 
-          </motion.div>
+          </div>
         ))}
 
       </div>
