@@ -1,38 +1,84 @@
 import "./Skills.css";
+import { useState } from "react";
 import {
-  FaCode,
   FaLaptopCode,
+  FaServer,
   FaShieldAlt,
+  FaDatabase,
   FaTools,
 } from "react-icons/fa";
 
-const dashboard = [
+const arsenal = [
   {
-    title: "Frontend",
-    icon: <FaCode />,
-    items: ["HTML", "CSS", "JavaScript", "React", "Vite"],
-  },
-  {
-    title: "Programming",
+    id: 0,
     icon: <FaLaptopCode />,
-    items: ["Python", "C", "C++"],
-  },
-  {
-    title: "Cyber Security",
-    icon: <FaShieldAlt />,
-    items: [
-      "Linux",
-      "Networking",
-      "OWASP",
-      "Nmap",
-      "Burp Suite",
-      "Wireshark",
+    category: "Frontend",
+    title: "Frontend Arsenal",
+    status: "READY",
+    projects: "5+ Projects",
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Vite",
+      "Responsive Design",
     ],
   },
+
   {
-    title: "Tools",
+    id: 1,
+    icon: <FaServer />,
+    category: "Backend",
+    title: "Backend Arsenal",
+    status: "READY",
+    projects: "3+ Projects",
+    tech: [
+      "Python",
+      "Flask",
+      "REST APIs",
+      "Authentication",
+      "JSON",
+    ],
+  },
+
+  {
+    id: 2,
+    icon: <FaShieldAlt />,
+    category: "Cyber Security",
+    title: "Cyber Arsenal",
+    status: "LEARNING",
+    projects: "Hackathon Projects",
+    tech: [
+      "Linux",
+      "Networking",
+      "OWASP Top 10",
+      "Wireshark",
+      "Burp Suite",
+    ],
+  },
+
+  {
+    id: 3,
+    icon: <FaDatabase />,
+    category: "Database",
+    title: "Database Arsenal",
+    status: "READY",
+    projects: "SQL Projects",
+    tech: [
+      "MySQL",
+      "SQLite",
+    ],
+  },
+
+  {
+    id: 4,
     icon: <FaTools />,
-    items: [
+    category: "Tools",
+    title: "Developer Toolkit",
+    status: "ACTIVE",
+    projects: "Daily Workflow",
+    tech: [
       "Git",
       "GitHub",
       "VS Code",
@@ -43,37 +89,66 @@ const dashboard = [
 ];
 
 function Skills() {
+  const [active, setActive] = useState(0);
+
   return (
     <section className="skills" id="skills">
 
-      <div className="section-heading">
-        <p>TECHNICAL EXPERTISE</p>
-        <h2>Skills & Technologies</h2>
+      <div className="section-title">
+        <p>CYBER ARSENAL</p>
+        <h2>Technologies I Use to Build</h2>
       </div>
 
-      <div className="dashboard">
+      <div className="arsenal-menu">
 
-        {dashboard.map((card, index) => (
-          <div className="panel" key={index}>
-
-            <div className="panel-header">
-              <div className="icon">{card.icon}</div>
-
-              <h3>{card.title}</h3>
+        {arsenal.map((item) => (
+          <div
+            key={item.id}
+            className={`arsenal-card ${
+              active === item.id ? "active-card" : ""
+            }`}
+            onClick={() => setActive(item.id)}
+          >
+            <div className="arsenal-icon">
+              {item.icon}
             </div>
 
-            <div className="panel-body">
-
-              {card.items.map((item, i) => (
-                <div className="item" key={i}>
-                  {item}
-                </div>
-              ))}
-
-            </div>
+            <h3>{item.category}</h3>
 
           </div>
         ))}
+
+      </div>
+
+      <div className="arsenal-details">
+
+        <div className="details-header">
+
+          <div className="details-icon">
+            {arsenal[active].icon}
+          </div>
+
+          <div>
+
+            <h3>{arsenal[active].title}</h3>
+
+            <p>Status : {arsenal[active].status}</p>
+
+          </div>
+
+        </div>
+
+        <div className="tech-grid">
+
+          {arsenal[active].tech.map((tech, index) => (
+            <span key={index}>{tech}</span>
+          ))}
+
+        </div>
+
+        <div className="project-count">
+          {arsenal[active].projects}
+        </div>
 
       </div>
 
