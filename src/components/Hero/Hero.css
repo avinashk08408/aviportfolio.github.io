@@ -416,3 +416,82 @@
   }
 
 }
+/* ===== Profile Image ===== */
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:340px;
+    height:340px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #38BDF8;
+    box-shadow:0 0 35px rgba(56,189,248,.35);
+
+    /* Rotate once */
+    animation:introRotate 1.2s ease-out forwards,
+             floating 4s ease-in-out infinite 1.2s;
+
+    transition:all .35s ease;
+}
+
+/* Rotate only once */
+@keyframes introRotate{
+
+    0%{
+        transform:rotate(-180deg) scale(.8);
+        opacity:0;
+    }
+
+    100%{
+        transform:rotate(0deg) scale(1);
+        opacity:1;
+    }
+
+}
+
+/* Gentle floating */
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* Hover Effect */
+
+.hero-image img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(56,189,248,.45),
+        0 0 50px rgba(56,189,248,.30);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero-image img{
+
+    width:250px;
+    height:250px;
+
+}
+
+}
