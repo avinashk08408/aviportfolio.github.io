@@ -1,143 +1,153 @@
 import "./Skills.css";
 import { useState } from "react";
+import {
+  FaLaptopCode,
+  FaServer,
+  FaShieldAlt,
+  FaDatabase,
+  FaTools,
+} from "react-icons/fa";
 
-const data = {
-  frontend: [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "React",
-    "Vite",
-    "Responsive Design",
-  ],
+const arsenal = [
+  {
+    id: 0,
+    icon: <FaLaptopCode />,
+    category: "Frontend",
+    title: "Frontend Arsenal",
+    status: "READY",
+    projects: "5+ Projects",
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Vite",
+      "Responsive Design",
+    ],
+  },
 
-  backend: [
-    "Python",
-    "Flask",
-    "REST APIs",
-    "Authentication",
-    "JSON",
-  ],
+  {
+    id: 1,
+    icon: <FaServer />,
+    category: "Backend",
+    title: "Backend Arsenal",
+    status: "READY",
+    projects: "3+ Projects",
+    tech: [
+      "Python",
+      "Flask",
+      "REST APIs",
+      "Authentication",
+      "JSON",
+    ],
+  },
 
-  api: [
-    "REST API",
-    "FastAPI",
-    "Fetch API",
-    "Axios",
-    "OpenWeather API",
-  ],
+  {
+    id: 2,
+    icon: <FaShieldAlt />,
+    category: "Cyber Security",
+    title: "Cyber Arsenal",
+    status: "LEARNING",
+    projects: "Hackathon Projects",
+    tech: [
+      "Linux",
+      "Networking",
+      "OWASP Top 10",
+      "Wireshark",
+      "Burp Suite",
+    ],
+  },
 
-  security: [
-    "Linux",
-    "Networking",
-    "OWASP Top 10",
-    "Burp Suite",
-    "Wireshark",
-  ],
+  {
+    id: 3,
+    icon: <FaDatabase />,
+    category: "Database",
+    title: "Database Arsenal",
+    status: "READY",
+    projects: "SQL Projects",
+    tech: [
+      "MySQL",
+      "SQLite",
+    ],
+  },
 
-  database: [
-    "MySQL",
-    "SQLite",
-  ],
-
-  tools: [
-    "Git",
-    "GitHub",
-    "VS Code",
-    "Postman",
-    "Figma",
-  ],
-};
+  {
+    id: 4,
+    icon: <FaTools />,
+    category: "Tools",
+    title: "Developer Toolkit",
+    status: "ACTIVE",
+    projects: "Daily Workflow",
+    tech: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "Figma",
+    ],
+  },
+];
 
 function Skills() {
-  const [active, setActive] = useState("frontend");
+  const [active, setActive] = useState(0);
 
   return (
     <section className="skills" id="skills">
 
-      <div className="terminal">
+      <div className="section-title">
+        <p>CYBER ARSENAL</p>
+        <h2>Technologies I Use to Build</h2>
+      </div>
 
-        <div className="terminal-header">
+      <div className="arsenal-menu">
 
-          <div className="buttons">
-            <span className="red"></span>
-            <span className="yellow"></span>
-            <span className="green"></span>
+        {arsenal.map((item) => (
+          <div
+            key={item.id}
+            className={`arsenal-card ${
+              active === item.id ? "active-card" : ""
+            }`}
+            onClick={() => setActive(item.id)}
+          >
+            <div className="arsenal-icon">
+              {item.icon}
+            </div>
+
+            <h3>{item.category}</h3>
+
+          </div>
+        ))}
+
+      </div>
+
+      <div className="arsenal-details">
+
+        <div className="details-header">
+
+          <div className="details-icon">
+            {arsenal[active].icon}
           </div>
 
-          <div className="terminal-title">
-            terminal@avinash:~/technology-stack
+          <div>
+
+            <h3>{arsenal[active].title}</h3>
+
+            <p>Status : {arsenal[active].status}</p>
+
           </div>
 
         </div>
 
-        <div className="terminal-body">
+        <div className="tech-grid">
 
-          <p className="command">
-            <span>$</span> help
-          </p>
+          {arsenal[active].tech.map((tech, index) => (
+            <span key={index}>{tech}</span>
+          ))}
 
-          <p>Select a module :</p>
+        </div>
 
-          <div className="command-list">
-
-            <button
-              onClick={() => setActive("frontend")}
-            >
-              frontend
-            </button>
-
-            <button
-              onClick={() => setActive("backend")}
-            >
-              backend
-            </button>
-
-            <button
-              onClick={() => setActive("api")}
-            >
-              api
-            </button>
-
-            <button
-              onClick={() => setActive("security")}
-            >
-              security
-            </button>
-
-            <button
-              onClick={() => setActive("database")}
-            >
-              database
-            </button>
-
-            <button
-              onClick={() => setActive("tools")}
-            >
-              tools
-            </button>
-
-          </div>
-
-          <p className="command">
-            <span>$</span> {active}
-          </p>
-
-          <div className="output">
-
-            {data[active].map((skill, index) => (
-              <p key={index}>
-                ✔ {skill}
-              </p>
-            ))}
-
-          </div>
-
-          <div className="cursor">
-            $
-            <span className="blink">_</span>
-          </div>
-
+        <div className="project-count">
+          {arsenal[active].projects}
         </div>
 
       </div>
