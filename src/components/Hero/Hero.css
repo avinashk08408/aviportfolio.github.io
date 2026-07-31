@@ -275,11 +275,7 @@
       #38bdf8
   );
 
-  animation: rotateRing 8s linear infinite;
-
-  box-shadow:
-      0 0 35px rgba(56,189,248,.35),
-      0 0 80px rgba(37,99,235,.2);
+  
 }
 
 .image-ring img {
