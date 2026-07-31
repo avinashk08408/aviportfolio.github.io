@@ -6,6 +6,7 @@ import {
   FaShieldAlt,
   FaDatabase,
   FaTools,
+  FaPlug,
 } from "react-icons/fa";
 
 const arsenal = [
@@ -36,30 +37,46 @@ const arsenal = [
     tech: [
       "Python",
       "Flask",
-      "REST APIs",
       "Authentication",
-      "JSON",
+      "REST Services",
     ],
   },
 
   {
     id: 2,
+    icon: <FaPlug />,
+    category: "API",
+    title: "API Arsenal",
+    status: "ACTIVE",
+    projects: "4+ Integrations",
+    tech: [
+      "REST API",
+      "FastAPI",
+      "JSON",
+      "Fetch API",
+      "Axios",
+      "OpenWeather API",
+    ],
+  },
+
+  {
+    id: 3,
     icon: <FaShieldAlt />,
-    category: "Cyber Security",
-    title: "Cyber Arsenal",
+    category: "Security",
+    title: "Cyber Security Arsenal",
     status: "LEARNING",
     projects: "Hackathon Projects",
     tech: [
       "Linux",
       "Networking",
       "OWASP Top 10",
-      "Wireshark",
       "Burp Suite",
+      "Wireshark",
     ],
   },
 
   {
-    id: 3,
+    id: 4,
     icon: <FaDatabase />,
     category: "Database",
     title: "Database Arsenal",
@@ -72,7 +89,7 @@ const arsenal = [
   },
 
   {
-    id: 4,
+    id: 5,
     icon: <FaTools />,
     category: "Tools",
     title: "Developer Toolkit",
@@ -114,7 +131,6 @@ function Skills() {
             </div>
 
             <h3>{item.category}</h3>
-
           </div>
         ))}
 
