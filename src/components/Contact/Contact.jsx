@@ -88,77 +88,49 @@ function Contact() {
 
           </div>
 
-          {/* Quick Connect */}
+{/* Quick Connect */}
 
-          <div className="quick-connect">
+<div className="quick-connect">
 
-            <h3>Quick Connect</h3>
+  <a
+    href="mailto:avinashk08408@gmail.com"
+    className="quick-item"
+  >
+    <FaEnvelope />
+    <span>Email</span>
+  </a>
 
-            <div className="contact-grid">
+  <a
+    href="https://github.com/avinashk08408"
+    target="_blank"
+    rel="noreferrer"
+    className="quick-item"
+  >
+    <FaGithub />
+    <span>GitHub</span>
+  </a>
 
-              <a
-                href="mailto:avinashk08408@gmail.com"
-                className="contact-box"
-              >
+  <a
+    href="https://linkedin.com/in/your-linkedin"
+    target="_blank"
+    rel="noreferrer"
+    className="quick-item"
+  >
+    <FaLinkedin />
+    <span>LinkedIn</span>
+  </a>
 
-                <FaEnvelope />
+  <a
+    href="https://wa.me/91XXXXXXXXXX"
+    target="_blank"
+    rel="noreferrer"
+    className="quick-item"
+  >
+    <FaWhatsapp />
+    <span>WhatsApp</span>
+  </a>
 
-                <h4>Email</h4>
-
-                <p>Send Mail</p>
-
-              </a>
-
-              <a
-                href="https://github.com/avinashk08408"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-box"
-              >
-
-                <FaGithub />
-
-                <h4>GitHub</h4>
-
-                <p>View Projects</p>
-
-              </a>
-
-              <a
-                href="https://linkedin.com/in/your-linkedin"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-box"
-              >
-
-                <FaLinkedin />
-
-                <h4>LinkedIn</h4>
-
-                <p>Let's Connect</p>
-
-              </a>
-
-              <a
-                href="https://wa.me/91XXXXXXXXXX"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-box"
-              >
-
-                <FaWhatsapp />
-
-                <h4>WhatsApp</h4>
-
-                <p>Quick Chat</p>
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </motion.div>
+</div>
 
         {/* RIGHT SIDE */}
 
