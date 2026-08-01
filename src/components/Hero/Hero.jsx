@@ -10,26 +10,22 @@ function Hero() {
 
       <div className="hero-container">
 
-        {/* LEFT */}
+        {/* LEFT CONTENT */}
 
-        <div className="hero-content">
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
 
-          <motion.p
-            className="hero-intro"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <p className="hero-intro">
             HELLO I'M
-          </motion.p>
+          </p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Avinash K
-          </motion.h1>
+          <h1>
+            Avinash <span>K</span>
+          </h1>
 
           <TypeAnimation
             sequence={[
@@ -42,6 +38,7 @@ function Hero() {
               "Ethical Hacker",
               2000,
             ]}
+            wrapper="span"
             speed={50}
             repeat={Infinity}
             className="typing"
@@ -49,9 +46,32 @@ function Hero() {
 
           <p className="hero-description">
             Passionate about cybersecurity, secure web development,
-            ethical hacking, and building modern web applications
+            ethical hacking and building modern web applications
             with beautiful user experiences.
           </p>
+
+          {/* Stats */}
+
+          <div className="hero-stats">
+
+            <div className="stat-card">
+              <h3>8+</h3>
+              <p>Projects</p>
+            </div>
+
+            <div className="stat-card">
+              <h3>1+</h3>
+              <p>Hackathon</p>
+            </div>
+
+            <div className="stat-card">
+              <h3>2025</h3>
+              <p>Journey</p>
+            </div>
+
+          </div>
+
+          {/* Buttons */}
 
           <div className="hero-buttons">
 
@@ -65,38 +85,31 @@ function Hero() {
 
           </div>
 
-        </div>
+        </motion.div>
 
-        {/* RIGHT */}
+        {/* RIGHT IMAGE */}
 
         <motion.div
           className="hero-image"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
 
-          {/* Rotating Outer Ring */}
-          <div className="image-ring">
+          <div className="image-glow"></div>
 
-            {/* Profile Image */}
+          <div className="image-card">
+
             <img
               src="/profile.png"
               alt="Avinash K"
             />
-
-            {/* Online Badge */}
-            <div className="online-badge">
-              <span className="online-dot"></span>
-              ONLINE
-            </div>
 
           </div>
 
         </motion.div>
 
       </div>
-
     </section>
   );
 }
