@@ -88,46 +88,34 @@ function Contact() {
 
           </div>
 
-{/* Quick Connect */}
+<div className="social-dock">
 
-<div className="quick-connect">
-
-  <a
-    href="mailto:avinashk08408@gmail.com"
-    className="quick-item"
-  >
+  <a href="mailto:avinashk08408@gmail.com">
     <FaEnvelope />
-    <span>Email</span>
   </a>
 
   <a
     href="https://github.com/avinashk08408"
     target="_blank"
     rel="noreferrer"
-    className="quick-item"
   >
     <FaGithub />
-    <span>GitHub</span>
   </a>
 
   <a
     href="https://linkedin.com/in/your-linkedin"
     target="_blank"
     rel="noreferrer"
-    className="quick-item"
   >
     <FaLinkedin />
-    <span>LinkedIn</span>
   </a>
 
   <a
     href="https://wa.me/91XXXXXXXXXX"
     target="_blank"
     rel="noreferrer"
-    className="quick-item"
   >
     <FaWhatsapp />
-    <span>WhatsApp</span>
   </a>
 
 </div>
