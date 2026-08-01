@@ -39,9 +39,9 @@ function Contact() {
 
           <p>
             I'm passionate about cybersecurity, secure web
-            development and modern web technologies. I'm always
-            open to internships, hackathons, collaborations,
-            and exciting projects.
+            development, ethical hacking and modern web
+            technologies. I'm always open to internships,
+            hackathons, collaborations and exciting projects.
           </p>
 
           {/* Availability */}
@@ -67,60 +67,67 @@ function Contact() {
 
           <div className="contact-buttons">
 
-            <a href="/resume.pdf" className="resume-btn">
-
+            <a
+              href="/resume.pdf"
+              className="resume-btn"
+            >
               <FaDownload />
-
               Resume
-
             </a>
 
             <a
               href="mailto:avinashk08408@gmail.com"
               className="email-btn"
             >
-
               <FaPaperPlane />
-
               Email Me
-
             </a>
 
           </div>
 
-<div className="social-dock">
+          {/* Social Dock */}
 
-  <a href="mailto:avinashk08408@gmail.com">
-    <FaEnvelope />
-  </a>
+          <div className="social-dock">
 
-  <a
-    href="https://github.com/avinashk08408"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <FaGithub />
-  </a>
+            <a
+              href="mailto:avinashk08408@gmail.com"
+              title="Email"
+            >
+              <FaEnvelope />
+            </a>
 
-  <a
-    href="https://linkedin.com/in/your-linkedin"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <FaLinkedin />
-  </a>
+            <a
+              href="https://github.com/avinashk08408"
+              target="_blank"
+              rel="noreferrer"
+              title="GitHub"
+            >
+              <FaGithub />
+            </a>
 
-  <a
-    href="https://wa.me/91XXXXXXXXXX"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <FaWhatsapp />
-  </a>
+            <a
+              href="https://linkedin.com/in/your-linkedin"
+              target="_blank"
+              rel="noreferrer"
+              title="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
 
-</div>
+            <a
+              href="https://wa.me/91XXXXXXXXXX"
+              target="_blank"
+              rel="noreferrer"
+              title="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
 
-        {/* RIGHT SIDE */}
+          </div>
+
+        </motion.div>
+
+                {/* RIGHT SIDE */}
 
         <motion.div
           className="contact-right"
@@ -135,20 +142,29 @@ function Contact() {
             <input
               type="text"
               placeholder="Your Name"
+              required
             />
 
             <input
               type="email"
               placeholder="Your Email"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="Subject"
             />
 
             <textarea
               rows="7"
-              placeholder="Your Message"
+              placeholder="Tell me about your project..."
+              required
             ></textarea>
 
             <button type="submit">
-              Send Message
+              <FaPaperPlane />
+              <span>Send Message</span>
             </button>
 
           </form>
