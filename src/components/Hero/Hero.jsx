@@ -16,15 +16,17 @@ function Hero() {
 
           <motion.p
             className="hero-intro"
-            initial={{ opacity:0,y:30 }}
-            animate={{ opacity:1,y:0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
             HELLO I'M
           </motion.p>
 
           <motion.h1
-            initial={{ opacity:0,y:40 }}
-            animate={{ opacity:1,y:0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             Avinash K
           </motion.h1>
@@ -47,7 +49,7 @@ function Hero() {
 
           <p className="hero-description">
             Passionate about cybersecurity, secure web development,
-            ethical hacking and building modern web applications
+            ethical hacking, and building modern web applications
             with beautiful user experiences.
           </p>
 
@@ -69,17 +71,25 @@ function Hero() {
 
         <motion.div
           className="hero-image"
-          initial={{ opacity:0,scale:.8 }}
-          animate={{ opacity:1,scale:1 }}
-          transition={{ duration:1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
         >
 
+          {/* Rotating Outer Ring */}
           <div className="image-ring">
 
+            {/* Profile Image */}
             <img
               src="/profile.png"
-              alt="Avinash"
+              alt="Avinash K"
             />
+
+            {/* Online Badge */}
+            <div className="online-badge">
+              <span className="online-dot"></span>
+              ONLINE
+            </div>
 
           </div>
 
