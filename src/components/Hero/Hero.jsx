@@ -50,26 +50,7 @@ function Hero() {
             with beautiful user experiences.
           </p>
 
-          {/* Stats */}
-
-          <div className="hero-stats">
-
-            <div className="stat-card">
-              <h3>8+</h3>
-              <p>Projects</p>
-            </div>
-
-            <div className="stat-card">
-              <h3>1+</h3>
-              <p>Hackathon</p>
-            </div>
-
-            <div className="stat-card">
-              <h3>2025</h3>
-              <p>Journey</p>
-            </div>
-
-          </div>
+        
 
           {/* Buttons */}
 
