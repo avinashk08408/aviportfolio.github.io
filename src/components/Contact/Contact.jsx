@@ -106,7 +106,7 @@ function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com/in/your-linkedin"
+              href="https://www.linkedin.com/in/avinash-k-201b47384?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
               title="LinkedIn"
@@ -115,7 +115,7 @@ function Contact() {
             </a>
 
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/91 6379301585"
               target="_blank"
               rel="noreferrer"
               title="WhatsApp"
