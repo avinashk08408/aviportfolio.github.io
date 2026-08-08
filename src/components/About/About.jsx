@@ -6,8 +6,10 @@ function About() {
     <section className="about" id="about">
 
       <div className="section-title">
-        <p>WHO</p>
-        <h2>I Am</h2>
+        
+        
+        <h2>WHO</h2>
+        <p>I AM</p>
       </div>
 
       <div className="about-wrapper">
