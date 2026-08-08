@@ -7,9 +7,8 @@ function About() {
 
       <div className="section-title">
         
-        
-        <h2>WHO</h2>
-        <p>I AM</p>
+         <p>PROFILE</p>
+        <h2>WHO I AM</h2>
       </div>
 
       <div className="about-wrapper">
