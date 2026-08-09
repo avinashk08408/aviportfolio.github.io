@@ -55,7 +55,7 @@ function About() {
 
             <div className="about-quote">
             <p>"The best way out is always through."</p>
-              <span>— Robert Frost</span>
+              <span>--Robert Frost</span>
             </div>
 
           </div>
