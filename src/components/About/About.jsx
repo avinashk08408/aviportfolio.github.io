@@ -22,7 +22,7 @@ function About() {
           <h3>Cyber Security Student & Web Developer</h3>
 
           <p>
-            I'm <strong>Avinash</strong>, a Cyber Security student at
+            Hello I'm <strong>Avinash</strong>, a Cyber Security student at
             <strong> SRM Valliammai Engineering College</strong> with a passion
             for building secure web applications and learning ethical hacking,
             networking, and modern web technologies. I enjoy turning ideas into
