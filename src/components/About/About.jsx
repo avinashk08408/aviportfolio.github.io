@@ -21,15 +21,21 @@ function About() {
 
           <h3>Cyber Security Student & Web Developer</h3>
 
-          <p>
-            Hello I'm <strong>Avinash</strong>, a Cyber Security student at
-            <strong> SRM Valliammai Engineering College</strong> with a passion
-            for building secure web applications and learning ethical hacking,
-            networking, and modern web technologies. I enjoy turning ideas into
-            practical, user-friendly solutions while continuously improving my
-            cybersecurity skills.
-          </p>
+          
+  <p>
+    I’m <strong>Avinash</strong>, a Cyber Security student and web developer
+    passionate about crafting <strong>modern digital experiences</strong> and
+    exploring the security behind them. I enjoy transforming ideas into
+    intuitive, purposeful web applications while continuously deepening my
+    understanding of cybersecurity, networking, and application security.
+    I’m driven by curiosity and a hands-on mindset — building, experimenting,
+    and refining with every project. For me, technology isn’t just about
+    writing code; it’s about understanding systems, solving meaningful
+    problems, and creating solutions that are both <strong>functional and
+    secure</strong>.
+  </p>
 
+          
           <div className="about-stats">
 
             <div className="stat-box">
@@ -45,6 +51,11 @@ function About() {
             <div className="stat-box">
               <h2>15+</h2>
               <span>Technologies</span>
+            </div>
+
+            <div className="about-quote">
+            <p>"The best way out is always through."</p>
+              <span>— Robert Frost</span>
             </div>
 
           </div>
