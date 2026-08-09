@@ -145,3 +145,20 @@ min-width:120px;
 }
 
 }
+.about-quote {
+  margin-top: 25px;
+  padding-left: 15px;
+  border-left: 2px solid #38bdf8;
+}
+
+.about-quote p {
+  color: #fff;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.about-quote span {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
