@@ -3,7 +3,8 @@ import "./Projects.css";
 const projects = [
   {
     title: "AuthShield",
-    description: "Secure authentication system with role-based access control.",
+    description:
+      "Secure authentication system with role-based access control.",
     image: "/projects/authshield.png",
     tech: ["React", "Flask", "SQLite"],
     github: "#",
@@ -11,7 +12,8 @@ const projects = [
   },
   {
     title: "Web Vulnerability Scanner",
-    description: "Scans websites for common vulnerabilities.",
+    description:
+      "Scans websites for common vulnerabilities.",
     image: "/projects/scanner.png",
     tech: ["Python", "Flask"],
     github: "#",
@@ -19,7 +21,8 @@ const projects = [
   },
   {
     title: "Fake GitHub Repo Detector",
-    description: "Detects fake GitHub repositories using AI.",
+    description:
+      "Detects fake GitHub repositories using AI.",
     image: "/projects/github-detector.png",
     tech: ["React", "AI"],
     github: "#",
@@ -27,7 +30,8 @@ const projects = [
   },
   {
     title: "Coming Soon",
-    description: "More cybersecurity projects.",
+    description:
+      "More cybersecurity projects.",
     image: "/projects/coming-soon.png",
     tech: ["Cyber"],
     github: "#",
@@ -49,8 +53,15 @@ function Projects() {
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
 
-            <img src={project.image} alt={project.title} />
+            {/* Project Image */}
+            <div className="project-image">
+              <img
+                src={project.image}
+                alt={project.title}
+              />
+            </div>
 
+            {/* Project Information */}
             <div className="project-info">
 
               <h3>{project.title}</h3>
@@ -64,11 +75,13 @@ function Projects() {
               </div>
 
               <div className="buttons">
+                <a href={project.github}>
+                  GitHub
+                </a>
 
-                <a href={project.github}>GitHub</a>
-
-                <a href={project.demo}>Live Demo</a>
-
+                <a href={project.demo}>
+                  Live Demo
+                </a>
               </div>
 
             </div>
