@@ -1,170 +1,90 @@
-import "./Skills.css";
 import { useState } from "react";
-import {
-  FaLaptopCode,
-  FaServer,
-  FaShieldAlt,
-  FaDatabase,
-  FaTools,
-  FaPlug,
-} from "react-icons/fa";
-
-const arsenal = [
-  {
-    id: 0,
-    icon: <FaLaptopCode />,
-    category: "Frontend",
-    title: "Frontend Arsenal",
-    status: "READY",
-    projects: "5+ Projects",
-    tech: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "React",
-      "Vite",
-      "Responsive Design",
-    ],
-  },
-
-  {
-    id: 1,
-    icon: <FaServer />,
-    category: "Backend",
-    title: "Backend Arsenal",
-    status: "READY",
-    projects: "3+ Projects",
-    tech: [
-      "Python",
-      "Flask",
-      "Authentication",
-      "REST Services",
-    ],
-  },
-
-  {
-    id: 2,
-    icon: <FaPlug />,
-    category: "API",
-    title: "API Arsenal",
-    status: "ACTIVE",
-    projects: "4+ Integrations",
-    tech: [
-      "REST API",
-      "FastAPI",
-      "JSON",
-      "Fetch API",
-      "Axios",
-      "OpenWeather API",
-    ],
-  },
-
-  {
-    id: 3,
-    icon: <FaShieldAlt />,
-    category: "Security",
-    title: "Cyber Security Arsenal",
-    status: "LEARNING",
-    projects: "Hackathon Projects",
-    tech: [
-      "Linux",
-      "Networking",
-      "OWASP Top 10",
-      "Burp Suite",
-      "Wireshark",
-    ],
-  },
-
-  {
-    id: 4,
-    icon: <FaDatabase />,
-    category: "Database",
-    title: "Database Arsenal",
-    status: "READY",
-    projects: "SQL Projects",
-    tech: [
-      "MySQL",
-      "SQLite",
-    ],
-  },
-
-  {
-    id: 5,
-    icon: <FaTools />,
-    category: "Tools",
-    title: "Developer Toolkit",
-    status: "ACTIVE",
-    projects: "Daily Workflow",
-    tech: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Postman",
-      "Figma",
-    ],
-  },
-];
+import "./Skills.css";
 
 function Skills() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(null);
+
+  const skillGroups = [
+    {
+      number: "01",
+      title: "EXPERIENCE LAYER",
+      skills: ["HTML", "CSS", "JavaScript", "React"],
+    },
+    {
+      number: "02",
+      title: "PROGRAMMING",
+      skills: ["Python", "Go", "Java", "C", "C++"],
+    },
+    {
+      number: "03",
+      title: "DATA & TOOLS",
+      skills: ["SQL", "Git", "GitHub"],
+    },
+    {
+      number: "04",
+      title: "NETWORKING",
+      skills: ["Networking", "TCP/IP", "HTTP"],
+    },
+  ];
+
+  const toggleSkill = (index) => {
+    setActive(active === index ? null : index);
+  };
 
   return (
     <section className="skills" id="skills">
 
+      {/* Heading */}
       <div className="section-title">
-        <p>CYBER ARSENAL</p>
-        <h2>Technologies I Use to Build</h2>
+        <p>CAPABILITIES</p>
+        <h2>ENGINEERING STACK</h2>
       </div>
 
-      <div className="arsenal-menu">
+      <p className="skills-subtitle">
+        How I build, secure, and ship products.
+      </p>
 
-        {arsenal.map((item) => (
+      {/* Skill Layers */}
+      <div className="skills-container">
+
+        {skillGroups.map((group, index) => (
           <div
-            key={item.id}
-            className={`arsenal-card ${
-              active === item.id ? "active-card" : ""
+            className={`skill-layer ${
+              active === index ? "active" : ""
             }`}
-            onClick={() => setActive(item.id)}
+            key={group.number}
           >
-            <div className="arsenal-icon">
-              {item.icon}
+
+            {/* Header */}
+            <button
+              className="skill-header"
+              onClick={() => toggleSkill(index)}
+              aria-expanded={active === index}
+            >
+              <div className="skill-title">
+                <span className="skill-number">
+                  {group.number}
+                </span>
+
+                <span>{group.title}</span>
+              </div>
+
+              <span className="skill-icon">
+                {active === index ? "−" : "+"}
+              </span>
+            </button>
+
+            {/* Expandable Content */}
+            <div className="skill-content">
+              <div className="skill-list">
+                {group.skills.map((skill) => (
+                  <span key={skill}>{skill}</span>
+                ))}
+              </div>
             </div>
 
-            <h3>{item.category}</h3>
           </div>
         ))}
-
-      </div>
-
-      <div className="arsenal-details">
-
-        <div className="details-header">
-
-          <div className="details-icon">
-            {arsenal[active].icon}
-          </div>
-
-          <div>
-
-            <h3>{arsenal[active].title}</h3>
-
-            <p>Status : {arsenal[active].status}</p>
-
-          </div>
-
-        </div>
-
-        <div className="tech-grid">
-
-          {arsenal[active].tech.map((tech, index) => (
-            <span key={index}>{tech}</span>
-          ))}
-
-        </div>
-
-        <div className="project-count">
-          {arsenal[active].projects}
-        </div>
 
       </div>
 
