@@ -35,11 +35,6 @@ function About() {
     secure</strong>.
   </p>
 
-           <div className="about-quote">
-            <p>"The best way out is always through."</p>
-              <span>--Robert Frost</span>
-            </div>
-
           
           <div className="about-stats">
 
@@ -56,6 +51,11 @@ function About() {
             <div className="stat-box">
               <h2>15+</h2>
               <span>Technologies</span>
+            </div>
+
+           <div className="about-quote">
+            <p>"The best way out is always through."</p>
+              <span>--Robert Frost</span>
             </div>
 
 
