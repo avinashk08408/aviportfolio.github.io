@@ -27,22 +27,32 @@
 }
 
 /* =========================
-   PROJECT SCROLL
+   PROJECT CONTAINER
+========================= */
+
+.projects-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* =========================
+   HORIZONTAL PROJECT SCROLL
 ========================= */
 
 .projects-scroll {
   display: flex;
-
   gap: 30px;
 
   overflow-x: auto;
 
   scroll-snap-type: x mandatory;
-
   scroll-behavior: smooth;
 
   padding: 10px 5px 25px;
 }
+
+/* Scrollbar */
 
 .projects-scroll::-webkit-scrollbar {
   height: 7px;
@@ -59,17 +69,16 @@
 }
 
 /* =========================
-   HORIZONTAL PROJECT CARD
+   PROJECT CARD
 ========================= */
 
 .project-card {
   flex: 0 0 850px;
 
-  min-height: 330px;
+  height: 420px;
 
   display: grid;
-
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 42% 58%;
 
   background: #111827;
 
@@ -84,10 +93,12 @@
   transition: 0.35s ease;
 }
 
+/* Hover */
+
 .project-card:hover {
   transform: translateY(-8px);
 
-  border-color: rgba(56, 189, 248, 0.35);
+  border-color: rgba(56, 189, 248, 0.4);
 
   box-shadow: 0 0 30px rgba(56, 189, 248, 0.18);
 }
@@ -119,39 +130,39 @@
 }
 
 /* =========================
-   PROJECT INFO
+   PROJECT INFORMATION
 ========================= */
 
 .project-info {
-  padding: 38px;
+  padding: 42px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
 .project-info h3 {
   color: #fff;
 
-  font-size: 1.8rem;
+  font-size: 2rem;
 
-  margin: 0 0 15px;
+  margin: 0 0 18px;
 }
 
 .project-info p {
   color: #cbd5e1;
 
-  line-height: 1.7;
+  line-height: 1.8;
 
-  margin: 0 0 22px;
+  font-size: 1rem;
+
+  margin: 0 0 25px;
 
   max-width: 500px;
 }
 
 /* =========================
-   TECH STACK
+   TECHNOLOGIES
 ========================= */
 
 .tech-stack {
@@ -161,7 +172,7 @@
 
   gap: 9px;
 
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 .tech-stack span {
@@ -174,6 +185,8 @@
   border-radius: 30px;
 
   font-size: 0.78rem;
+
+  border: 1px solid rgba(56, 189, 248, 0.08);
 }
 
 /* =========================
@@ -191,7 +204,7 @@
 .buttons a {
   flex: 1;
 
-  padding: 11px;
+  padding: 11px 15px;
 
   text-align: center;
 
@@ -218,20 +231,26 @@
    TABLET
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
   .project-card {
-    flex: 0 0 720px;
+    flex: 0 0 760px;
 
-    grid-template-columns: 38% 62%;
+    height: 400px;
+
+    grid-template-columns: 40% 60%;
   }
 
   .project-info {
-    padding: 30px;
+    padding: 32px;
   }
 
   .project-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+
+  .project-info p {
+    font-size: 0.95rem;
   }
 }
 
@@ -245,6 +264,10 @@
     padding: 80px 20px;
   }
 
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
   .section-heading h2 {
     font-size: 2.2rem;
   }
@@ -252,13 +275,15 @@
   .project-card {
     flex: 0 0 90vw;
 
-    grid-template-columns: 1fr;
+    height: auto;
 
-    min-height: auto;
+    display: grid;
+
+    grid-template-columns: 1fr;
   }
 
   .project-image {
-    height: 210px;
+    height: 230px;
   }
 
   .project-info {
@@ -267,13 +292,64 @@
 
   .project-info h3 {
     font-size: 1.4rem;
+
+    margin-bottom: 12px;
   }
 
   .project-info p {
     font-size: 0.9rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+  }
+
+  .tech-stack {
+    margin-bottom: 22px;
+  }
+
+  .tech-stack span {
+    font-size: 0.7rem;
+
+    padding: 7px 11px;
   }
 
   .buttons {
     max-width: none;
+
+    gap: 10px;
+  }
+
+  .buttons a {
+    padding: 10px;
+
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .projects {
+    padding: 70px 15px;
+  }
+
+  .project-card {
+    flex: 0 0 92vw;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .project-info {
+    padding: 22px;
+  }
+
+  .project-info h3 {
+    font-size: 1.25rem;
   }
 }
