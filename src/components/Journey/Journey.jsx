@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Education.css";
+import "./Journey.css";
 
 function Education() {
   const [active, setActive] = useState(null);
