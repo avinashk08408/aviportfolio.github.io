@@ -1,198 +1,61 @@
-import { useState } from "react";
 import "./Journey.css";
+import { FaUniversity, FaGraduationCap, FaSchool } from "react-icons/fa";
 
-function Education() {
-  const [active, setActive] = useState(null);
+const education = [
+  {
+    icon: <FaUniversity />,
+    title: "B.E Cyber Security",
+    school: "SRM Valliammai Engineering College",
+    year: "2025 - Present",
+    status: "Pursuing",
+    current: true,
+  },
+  {
+    icon: <FaGraduationCap />,
+    title: "Higher Secondary",
+    school: "Don Bosco Matric Hr. Sec. School",
+    year: "2025",
+    status: "85%",
+  },
+  {
+    icon: <FaSchool />,
+    title: "Secondary School",
+    school: "Don Bosco Matric Hr. Sec. School",
+    year: "2023",
+    status: "90%",
+  },
+];
 
-  const education = [
-    {
-      year: "2023",
-      title: "SSLC",
-      school: "Don Bosco Matriculation Higher Secondary School",
-      type: "FOUNDATION",
-      percentage: "90%",
-    },
-    {
-      year: "2023 — 2025",
-      title: "HSC",
-      school: "Don Bosco Matriculation Higher Secondary School",
-      type: "ACADEMIC DEVELOPMENT",
-      percentage: "85%",
-    },
-    {
-      year: "2025 — PRESENT",
-      title: "B.E. CYBER SECURITY",
-      school: "SRM Valliammai Engineering College",
-      type: "SPECIALIZATION",
-      skills: [
-        "Cybersecurity",
-        "Development",
-        "Networking",
-      ],
-    },
-  ];
-
-  const toggleCredential = (index) => {
-    setActive(active === index ? null : index);
-  };
-
+function Journey() {
   return (
-    <section className="education" id="education">
+    <section className="journey" id="journey">
 
-      {/* Heading */}
-      <div className="section-heading">
-        <p>EDUCATION</p>
-        <h2>MY ACADEMIC PATH</h2>
+      <div className="section-title">
+        <p>ACADEMIC PASSPORT</p>
+        <h2>Verified Learning Records</h2>
       </div>
 
-      {/* Academic Path */}
-      <div className="academic-path">
+      <div className="passport-grid">
 
-        {/* Foundation Side */}
-        <div className="foundation">
+        {education.map((item, index) => (
+          <div
+            className={`passport-card ${item.current ? "current" : ""}`}
+            key={index}
+          >
+            <div className="icon">{item.icon}</div>
 
-          <div className="path-label">
-            FOUNDATION
-          </div>
+            <h3>{item.title}</h3>
 
-          {/* SSLC */}
-          <div className="education-card">
+            <p>{item.school}</p>
 
-            <div className="education-year">
-              2023
+            <span>{item.year}</span>
+
+            <div className="badge">
+              {item.current ? "🟢 " : "⭐ "}
+              {item.status}
             </div>
-
-            <h3>SSLC</h3>
-
-            <p className="school">
-              Don Bosco Matriculation
-              Higher Secondary School
-            </p>
-
-            <div className="credential-area">
-
-              <button
-                onClick={() => toggleCredential(0)}
-                className="credential-btn"
-              >
-                {active === 0
-                  ? "CLOSE"
-                  : "CREDENTIAL"}
-              </button>
-
-              {active === 0 && (
-                <div className="credential-info">
-                  <span>SSLC</span>
-                  <strong>90%</strong>
-                </div>
-              )}
-
-            </div>
-
           </div>
-
-          {/* HSC */}
-          <div className="education-card">
-
-            <div className="education-year">
-              2023 — 2025
-            </div>
-
-            <h3>HSC</h3>
-
-            <p className="school">
-              Don Bosco Matriculation
-              Higher Secondary School
-            </p>
-
-            <div className="credential-area">
-
-              <button
-                onClick={() => toggleCredential(1)}
-                className="credential-btn"
-              >
-                {active === 1
-                  ? "CLOSE"
-                  : "CREDENTIAL"}
-              </button>
-
-              {active === 1 && (
-                <div className="credential-info">
-                  <span>HSC</span>
-                  <strong>85%</strong>
-                </div>
-              )}
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* Connecting Arrow */}
-        <div className="path-connector">
-          <span>→</span>
-        </div>
-
-        {/* Specialization */}
-        <div className="specialization">
-
-          <div className="path-label">
-            SPECIALIZATION
-          </div>
-
-          <div className="education-card current">
-
-            <div className="education-year">
-              2025 — PRESENT
-            </div>
-
-            <h3>B.E. CYBER SECURITY</h3>
-
-            <p className="school">
-              SRM Valliammai Engineering College
-            </p>
-
-            <div className="focus-area">
-
-              <span>Cybersecurity</span>
-              <span>Development</span>
-              <span>Networking</span>
-
-            </div>
-
-            <button
-              onClick={() => toggleCredential(2)}
-              className="credential-btn"
-            >
-              {active === 2
-                ? "CLOSE"
-                : "CREDENTIAL"}
-            </button>
-
-            {active === 2 && (
-              <div className="credential-info">
-                <span>B.E. Cyber Security</span>
-                <strong>IN PROGRESS</strong>
-              </div>
-            )}
-
-          </div>
-
-          {/* Next */}
-          <div className="next-stage">
-
-            <span className="next-label">
-              NEXT →
-            </span>
-
-            <h3>INDUSTRY</h3>
-
-            <p>READY</p>
-
-          </div>
-
-        </div>
+        ))}
 
       </div>
 
@@ -200,4 +63,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default Journey;
