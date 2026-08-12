@@ -1,3 +1,5 @@
+import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
+
 import Cursor from "./components/Cursor/Cursor";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
