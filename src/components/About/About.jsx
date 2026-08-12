@@ -34,12 +34,7 @@ function About() {
     problems, and creating solutions that are both <strong>functional and
     secure</strong>.
   </p>
-          <p>
-          <div className="about-quote">
-            <p>"The best way out is always through."</p>
-              <span>--Robert Frost</span>
-            </div>
-          </p>
+          
           
           <div className="about-stats">
 
@@ -58,7 +53,12 @@ function About() {
               <span>Technologies</span>
             </div>
 
-  
+          <p>
+          <div className="about-quote">
+            <p>"The best way out is always through."</p>
+              <span>--Robert Frost</span>
+            </div>
+          </p>
 
 
           </div>
